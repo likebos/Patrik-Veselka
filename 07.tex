@@ -1,0 +1,63 @@
+% This is LLNCS.DEM the demonstration file of
+% the LaTeX macro package from Springer-Verlag
+% for Lecture Notes in Computer Science,
+% version 2.4 for LaTeX2e as of 16. April 2010
+%
+\documentclass{llncs}
+%
+%
+\begin{document}
+%
+
+\title{An Approach to Intelligent Interactive Social Network Geo-Mapping}
+%
+\titlerunning{Hamiltonian Mechanics}  % abbreviated title (for running head)
+%                                     also used for the TOC unless
+%                                     \toctitle is used
+%
+\author{Anton Benčič \and Márius Šajgalík \and Michal Barla \and Mária Bieliková }
+%
+\authorrunning{Ivar Ekeland et al.} % abbreviated author list (for running head)
+%
+\institute{Slovak University of Technology in Bratislava\\
+Faculty of Informatics and Information Technologies\\
+Ilkovičova 3, 842 16 Bratislava, Slovakia\\
+\email{{name.surname}@stuba.sk}\\
+}
+
+\maketitle            
+
+\begin{abstract}
+Map-based visualization of different kinds of information, which can be geo-coded to a particular location, becomes more and more popular, as it is very well accepted and understood by end-users. However, a simple map interface is not enough if we aim to provide information about objects coming from vast and dynamic information spaces such as the Web or social networks are. In this paper, we propose a novel method for intelligent visualization of generic objects within a map interface called IntelliView, based on an extensive evaluation and ranking of objects including both content and collaborative-based approaches. We describe the method implementation in a web-based application called Present, which is aimed at recycling items in social networks together with an experiment aimed at evaluation of proposed approach.
+
+\begin{keywords}
+social network, content filtering, map, personalization, visualization
+\end{keywords}
+
+\end{abstract}
+
+\section{Introduction and Related Work}
+
+Intelligent presentation of data and information on the Web, including personalization is becoming crucial as the amount of available information increases in an incredible pace while the information is getting inter-connected in various different ways. It is becoming harder and harder to navigate in such a tangle of information resources of various kinds, origin and quality.
+
+Special kind of information, which is gaining popularity nowadays, is information coming from social networks. Visualization of social networks is often realized in a form of complicated graphs that are hard to read and navigate in. Other approach is to use text interfaces to provide information about events happening within a social network. Neither of these approaches can keep pace with dynamics of social network and does not scale well as the size of the social network grows as well as the amount of information within it.
+
+Most of the well-known approaches to social network visualization are not targeted at end-users, but rather on researchers or analysts, providing them with a quick overview of a social network and means for further statistical analysis and sociological research [7]1.
+
+An example of a system, which is devoted to be used by end-users, is Viszter [2]. It visualizes a social network in a force-directed network layout. It focuses on using different visualization techniques to improve the navigation and search experience, but does not include any kind of content filtering or personalization, which would help to reduce the size of displayed network.
+We decided to tackle the issue by realizing an intelligent map interface support for social networks visualization. A map, forming a basis of the visualization is a well known concept providing a basic level of information space partitioning based on geographical location. Location is often basic attribute of people or things involved in the social network. Another important partitioning is obtained by intelligent evaluation of social network, which partition the whole graph into several layers of abstraction and thus preventing the information overload problem.
+There are many production-grade solutions based on map visualization, usually built on top of big online map services providers such as Google Maps or Microsoft Bing Maps. The system Geotracker [1] is interesting from our point of view, as it, apart from using the map interface to visualize geotagged RSS content, provides also a possibility to visualize development of the information space over time, which is similar to our idea of RealView described in this paper. Moreover, it contains basic user’s interests model mapped to content categories, which is used for the personalization of the presentation layer.
+In order to capture the dynamics of social networks, we also visualize important events and interactions. These are fully adapted to a user, to give him an overview of what happened since his last visit and to provide him with real-time updates as they happen.
+Every visualization method obviously aims at presenting the most relevant content for a particular user. In the case when there are too many objects, which cannot be presented efficiently all at the same time, the first step that has to be exploited in one way or another is the content filtering. The first filtering that our approach called IntelliView performs is on a basis of the currently visible region of the map. However, this is far away from being enough, as the extent of a visible map can and by experience contains more content (objects) that can be presented at a time. Because of this, our IntelliView makes another use of content filtering in a two-step process: (i) object evaluation and (ii) content presentation (visualization).
+This paper is structured as follows. In first two sections we describe two basic steps of the proposed method for visualization: object evaluation (Section 3) and concept visualization (Section4). Section 5 is devoted to the evaluation of proposed method. Finally, we draw our conclusions.
+
+\section{Object Evaluation}
+
+The main issue of any kind of presentation-layer preprocessing is that if we want to get more accurate results, we need more data to collect and need to spend more time per object for its evaluation. If we are using a lengthy evaluation method in a real world (i.e. the Web) environment with many objects to evaluate, this can be a problem as the users are willing to wait only a very limited time for the site or application to respond and if it does not, the user most often gives up.
+An often used technique for overcoming the time problem is caching or pre-computing. Caching can help users speed up their consequent requests and is most useful in an environment where users follow a use pattern or tend to repeat their use-cases over a period of time. However, if there is large diversity in user behavior or the evaluation depends on time-varying parameters, the stored results become obsolete very quickly and the whole concept of caching fails. The technique of pre-computing has the same purpose and problems as caching with the difference that pre-computing is used for more complex computations that change even less often and their results are used for processing of each request.
+Because our method for intelligent visualization of generic objects within a map interface needs to work with large sets of objects and present only a small portion of them at a time, we need more complex and thus time consuming computations to perform on every object. However, due to the aforementioned problem of computation and response times, we were forced to move some portions of the process into pre-computations stage.
+Our object evaluation algorithm has both content-based and collaborative components. The final value for an object is assigned as follows:qqqq
+%
+
+
+\end{document}
